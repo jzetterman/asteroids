@@ -6,6 +6,11 @@ class Player(CircleShape):
   def __init__(self, x, y, PLAYER_RADIUS):
     super().__init__(x, y, PLAYER_RADIUS)
     self.rotation = 0
+    
+    # Automatically add the instance to groups in the 'containers' variable
+    if hasattr(self.__class__, 'containers'):  # Check if 'containers' is defined
+        for group in self.__class__.containers:  # Loop over the groups
+            group.add(self)  # Add 'self' to each group
 
   def triangle(self):
       forward = pygame.Vector2(0, 1).rotate(self.rotation)
