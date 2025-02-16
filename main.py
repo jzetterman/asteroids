@@ -35,9 +35,9 @@ def main():
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
           return
-      elif event.type == pygame.KEYDOWN:  # Add this check
-        if event.key == pygame.K_SPACE:
-            player.shoot()
+      # elif event.type == pygame.KEYDOWN:  # Add this check
+      #   if event.key == pygame.K_SPACE:
+      #       player.shoot()
       
     screen.fill((0, 0, 0))
 
